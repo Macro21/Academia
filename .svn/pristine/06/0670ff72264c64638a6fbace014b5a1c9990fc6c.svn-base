@@ -1,0 +1,217 @@
+/**
+ * 
+ */
+package presentacion.aulas.alta;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.lang.reflect.Constructor;
+import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
+import negocio.aulas.TransferAula;
+
+import presentacion.controlador.Controlador;
+import presentacion.controlador.EventoNegocio;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author Andrei Ionut Vaduva
+ * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+public class JFrameAltaAula extends JFrame {
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JLabel[] jLabel = new JLabel[2];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JTextField[] jTextField = new JTextField[2];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JButton[] jButton = new JButton[2];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JPanel jPanel;
+
+	private JPanel panelAlta;
+	private JButton buttonContinuar;
+	private JButton buttonCancelar;
+	private JLabel lblNombre;
+	private JLabel lblCapacidad;
+	private JTextField nombre;
+	private JTextField capacidad;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public JFrameAltaAula() {
+		// begin-user-code
+		super();
+		ventana();
+		initGUIAltaAula();
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void initGUIAltaAula() {
+		// begin-user-code
+
+		//Creacion de los componentes
+		this.panelAlta = new JPanel();
+		this.panelAlta.setBackground(Color.gray);
+
+		this.buttonContinuar = new JButton("Dar de Alta");
+		this.buttonCancelar = new JButton("Salir");
+
+		this.lblNombre = new JLabel("Nombre del aula: ");
+		this.lblCapacidad = new JLabel("Capacidad: ");
+		this.lblNombre.setFont(new Font("Tahoma", 0, 15));
+		this.lblCapacidad.setFont(new Font("Tahoma", 0, 15));
+		Border border = LineBorder.createBlackLineBorder();
+		this.lblNombre.setBorder(border);
+		this.lblCapacidad.setBorder(border);
+		this.lblNombre.setForeground(Color.BLACK);
+		this.lblCapacidad.setForeground(Color.BLACK);
+
+		this.nombre = new JTextField();
+		this.capacidad = new JTextField();
+
+		this.buttonContinuar.addActionListener(new ActionListenerAltaAula() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				String nombre = JFrameAltaAula.this.nombre.getText();
+				TransferAula tAula = null;
+				try {
+					int capacidad = Integer
+							.parseInt(JFrameAltaAula.this.capacidad.getText());
+					tAula = new TransferAula(nombre, capacidad, -1, true);
+				} catch (Exception e) {
+					tAula = new TransferAula(nombre, -1, -1, true);
+				} finally {
+					Controlador.getInstance().accion(EventoNegocio.ALTA_AULA,
+							tAula);
+				}
+			}
+		});
+
+		this.buttonCancelar.addActionListener(new ActionListenerAltaAula() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JFrameAltaAula.this.dispose();
+			}
+		});
+
+		panelAlta.setLayout(new GridLayout(3, 2));
+		//Se añaden los componentes al panel
+		panelAlta.add(this.lblNombre);
+		panelAlta.add(this.nombre);
+
+		panelAlta.add(this.lblCapacidad);
+		panelAlta.add(this.capacidad);
+
+		panelAlta.add(this.buttonContinuar);
+		panelAlta.add(this.buttonCancelar);
+		//panelAlta.setVisible(true);
+
+		this.addWindowListener(new WindowListener() {
+
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+
+			@Override
+			public void windowClosed(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				JFrameAltaAula.this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+
+			@Override
+			public void windowIconified(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// TODO Apéndice de método generado automáticamente
+
+			}
+		});
+		this.add(this.panelAlta);
+
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void ventana() {
+		// begin-user-code
+		this.setTitle("Alta Aula");
+		this.setSize(300, 300);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// end-user-code
+	}
+}

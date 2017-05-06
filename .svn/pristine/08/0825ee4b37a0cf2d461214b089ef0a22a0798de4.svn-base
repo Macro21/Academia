@@ -1,0 +1,96 @@
+/**
+ * 
+ */
+package integracion.profesores;
+
+import java.io.FileWriter;
+import java.util.Scanner;
+import java.io.File;
+import negocio.profesores.TransferProfesores;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author Andrei Ionut Vaduva
+ * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+public class DAOProfesoresImp implements DAOProfesores {
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private FileWriter fileWriter;
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private Scanner scanner;
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private File file;
+
+	/** 
+	 * (sin Javadoc)
+	 * @see DAOProfesores#leer(int id)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public TransferProfesores leer(int id) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+		return null;
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see DAOProfesores#escribir(TransferProfesores tProfesores)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void escribir(TransferProfesores tProfesores) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see DAOProfesores#baja(TransferProfesores tProfesores)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void baja(TransferProfesores tProfesores) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see DAOProfesores#leerPorDNI()
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public TransferProfesores leerPorDNI() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+		return null;
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see DAOProfesores#ultimoID()
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public String ultimoID() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+		return null;
+		// end-user-code
+	}
+}

@@ -1,0 +1,375 @@
+/**
+ * 
+ */
+package presentacion.aulas.modificar;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.List;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import java.awt.Scrollbar;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.table.DefaultTableModel;
+
+import java.lang.reflect.Constructor;
+import negocio.aulas.TransferAula;
+import presentacion.controlador.Controlador;
+import presentacion.controlador.EventoNegocio;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author Andrei Ionut Vaduva
+ * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+@SuppressWarnings("serial")
+public class JFrameModificarAula extends JFrame {
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JButton[] jButton = new JButton[2];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private Scrollbar scrollbar;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JFrame jFrame;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JPanel jPanel;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JLabel[] jLabel = new JLabel[3];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JTextField[] jTextField = new JTextField[3];
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private JTable jTable;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private DefaultTableModel defaultTableModel;
+
+	private JButton btnCancelar = new JButton();
+
+	private JButton btnContinuar = new JButton();
+
+	private JLabel mensajeId = new JLabel();
+
+	private JLabel mensajeNombre = new JLabel();
+
+	private JLabel mensajeCapacidad = new JLabel();
+
+	private JTextField id = new JTextField();
+
+	private JTextField nombre = new JTextField();
+
+	private JTextField capacidad = new JTextField();
+
+	private JTable tabla;
+
+	private JPanel panelModificar;
+
+	private DefaultTableModel modelo;
+
+	private JScrollPane scroll;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public JFrameModificarAula() {
+		// begin-user-code
+		initGUI();
+		ventana();
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void ventana() {
+		// begin-user-code
+		this.setTitle("Modificar Aula");
+		this.setSize(300, 400);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void initGUI() {
+		// begin-user-code
+		//Creo todos los componentes
+		this.panelModificar = new JPanel();
+		JPanel panelAux0 = new JPanel();
+		JPanel panelAux1 = new JPanel();
+		JPanel panelAux2 = new JPanel();
+		JPanel panelAux3 = new JPanel();
+		JPanel panelAux4 = new JPanel();
+
+		crecionTabla();
+
+		this.btnCancelar = new JButton("Cancelar");
+		this.btnContinuar = new JButton("Continuar");
+		this.mensajeId = new JLabel("ID aula a modificar");
+		this.mensajeNombre = new JLabel("Nuevo nombre        ");
+		this.mensajeCapacidad = new JLabel("Nueva capacidad  ");
+		this.id = new JTextField();
+		this.nombre = new JTextField();
+		this.capacidad = new JTextField();
+
+		//Panel 0
+		panelAux0.setLayout(new GridLayout(1, 2));
+		panelAux0.add(this.mensajeNombre);
+		panelAux0.add(this.nombre);
+		//Panel 1
+		panelAux1.setLayout(new GridLayout(1, 2));
+		panelAux1.add(this.mensajeCapacidad);
+		panelAux1.add(this.capacidad);
+		//Panel 2
+		panelAux2.setLayout(new GridLayout(1, 2));
+		panelAux2.add(this.mensajeId);
+		panelAux2.add(this.id);
+		//Panel 3
+		panelAux3.setLayout(new GridLayout(1, 2));
+		panelAux3.add(this.btnContinuar);
+		panelAux3.add(this.btnCancelar);
+		//Panel 4
+		panelAux4.setLayout(new BorderLayout());
+		panelAux4.add(this.scroll, BorderLayout.CENTER);
+		this.tabla.setSize(panelAux4.getSize());
+
+		//Añado todo al panel principal
+		this.panelModificar.setLayout(new BoxLayout(this.panelModificar,
+				BoxLayout.Y_AXIS));
+		this.panelModificar.add(panelAux2);
+		this.panelModificar.add(panelAux0);
+		this.panelModificar.add(panelAux1);
+		this.panelModificar.add(panelAux3);
+		this.panelModificar.add(panelAux4);
+
+		actionListener();
+
+		actionListenerX();
+
+		//Añado el panel al frame
+		this.add(panelModificar);
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void actionListener() {
+		// begin-user-code
+
+		this.btnCancelar.addActionListener(new ActionListenerModificarAula() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JFrameModificarAula.this.dispose();
+			}
+		});
+
+		this.btnContinuar.addActionListener(new ActionListenerModificarAula() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				TransferAula tAula = null;
+				String nombre = JFrameModificarAula.this.nombre.getText();
+				int capacidad = parseInt(JFrameModificarAula.this.capacidad
+						.getText());
+				int id = parseInt(JFrameModificarAula.this.id.getText());
+				tAula = new TransferAula(nombre, capacidad, id, false);
+				Controlador.getInstance().accion(EventoNegocio.MODIFICAR_AULA,
+						tAula);
+				Controlador.getInstance().accion(EventoNegocio.LEER_AULAID,
+						null);
+			}
+		});
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void parseInt() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	private int parseInt(String dato) {
+		int resultado = -1;
+		try {
+			resultado = Integer.parseInt(dato);
+		} catch (NumberFormatException e) {
+		}
+		return resultado;
+	}
+
+	private void crecionTabla() {
+		//Tabla
+		String[] colsName = { "Aula", "Id" };
+		this.modelo = new DefaultTableModel(15, 2);
+		modelo.setColumnIdentifiers(colsName);
+		this.tabla = new JTable(modelo);
+		this.scroll = new JScrollPane(this.tabla);
+		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		this.tabla.setMaximumSize(new Dimension(200, 300));
+		this.tabla.setEnabled(false);
+	}
+
+	public void actualizarMostrarAulaId(List<TransferAula> list) {
+		clearTable();
+		for (int i = 0; i < list.size(); i++) {
+			this.modelo.setValueAt(list.get(i).getNombreAula(), i, 0);
+			this.modelo.setValueAt(list.get(i).getId(), i, 1);
+		}
+		this.modelo.fireTableDataChanged();
+
+	}
+
+	private void clearTable() {
+		for (int i = 0; i < this.modelo.getRowCount(); i++) {
+			this.modelo.setValueAt("", i, 0);
+			this.modelo.setValueAt("", i, 1);
+		}
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void actionListenerX() {
+		// begin-user-code
+
+		this.addWindowListener(new WindowListener() {
+
+			@Override
+			public void windowActivated(WindowEvent e) {
+			}
+
+			@Override
+			public void windowClosed(WindowEvent e) {
+			}
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				JFrameModificarAula.this
+						.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+			}
+
+			@Override
+			public void windowIconified(WindowEvent e) {
+			}
+
+			@Override
+			public void windowOpened(WindowEvent e) {
+			}
+		});
+
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void limpiarTabla() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void actualizar() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private void creacionTabla() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+}

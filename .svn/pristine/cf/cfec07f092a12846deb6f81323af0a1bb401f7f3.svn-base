@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package presentacion.alumnos.vistasAlumno;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author Andrei Ionut Vaduva
+ * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+public abstract class VistasAlumno {
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	private static VistasAlumno vistasAlumno;
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @return
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public static VistasAlumno getInstance() {
+		// begin-user-code
+		if (vistasAlumno == null)
+			vistasAlumno = new VistaAlumnoImp();
+		return vistasAlumno;
+		// end-user-code
+	}
+
+	/** 
+	 * <!-- begin-UML-doc -->
+	 * <!-- end-UML-doc -->
+	 * @param string
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public abstract void actualizar(String string);
+
+	public abstract void ventana();
+}

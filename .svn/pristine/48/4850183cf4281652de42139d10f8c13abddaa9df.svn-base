@@ -1,0 +1,72 @@
+/**
+ * 
+ */
+package negocio.alumnos;
+
+/** 
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author Andrei Ionut Vaduva
+ * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ */
+public class SAAlumnoImp implements SAAlumno {
+	/** 
+	 * (sin Javadoc)
+	 * @see SAAlumno#alta(Object tAlumno)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void alta(Object tAlumno) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see SAAlumno#baja(Object tAlumno)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void baja(Object tAlumno) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see SAAlumno#modificar(Object tAlumno)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void modificar(Object tAlumno) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see SAAlumno#mostrarAlumno(String DNI)
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void mostrarAlumno(String DNI) {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+
+	/** 
+	 * (sin Javadoc)
+	 * @see SAAlumno#mostrarAlumnos()
+	 * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	 */
+	public void mostrarAlumnos() {
+		// begin-user-code
+		// TODO Apéndice de método generado automáticamente
+
+		// end-user-code
+	}
+}
